@@ -1,55 +1,58 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import { Component } from "react";
-import 'materialize-css/dist/css/materialize.min.css'
-import M from 'materialize-css'
+import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
 
-type props = {
-    tema: string,
-    botoes: string[],
-    seletorView: Function
-}
+type BarraNavegacaoProps = {
+    tema?: string;
+    botoes: { texto: string; rota: string; icone: string, submenus?: { texto: string; rota: string }[] }[];
+};
 
-export default class BarraNavegacao extends Component<props> {
-    constructor(props: props | Readonly<props>) {
-        super(props)
-        this.gerarListaBotoes = this.gerarListaBotoes.bind(this)
-    }
+const BarraNavegacao: React.FC<BarraNavegacaoProps> = ({ tema = 'navbar-dark bg-primary', botoes }) => {
+    const navigate = useNavigate();
 
-    componentDidMount() {
-        document.addEventListener('DOMContentLoaded', function () {
-            let elems = document.querySelectorAll('.sidenav');
-            M.Sidenav.init(elems)
-        });
-    }
+    const gerarListaBotoes = () => {
+        return botoes.map((botao) => (
+            <li key={botao.texto} className="nav-item">
+                <a
+                    className="nav-link"
+                    onClick={() => navigate(botao.rota)}
+                    style={{ cursor: 'pointer', color: '#ffffff' }}
+                >
+                    <i className={`bi bi-${botao.icone}`}></i> {botao.texto}
+                </a>
+            </li>
+        ));
+    };
 
-    gerarListaBotoes() {
-        if (this.props.botoes.length <= 0) {
-            return <></>
-        } else {
-            let lista = this.props.botoes.map(valor =>
-                <li key={valor}><a onClick={(e) => this.props.seletorView(valor, e)}>{valor}</a></li>
-            )
-            return lista
-        }
-    }
+    return (
+        <nav className={`navbar navbar-expand-lg ${tema}`}>
+            <div className="container-fluid">
+                <a
+                    className="navbar-brand"
+                    onClick={() => navigate('/')}
+                    style={{ cursor: 'pointer', color: '#ffffff' }}
+                >
+                    World Beauty
+                </a>
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav ms-auto">
+                        {gerarListaBotoes()}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    );
+};
 
-    render() {
-        let estilo = `${this.props.tema}`
-        return (
-            <>
-                <nav className={estilo}>
-                    <div className="nav-wrapper">
-                        <a className="brand-logo">WB</a>
-                        <a data-target="mobile-menu" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-                        <ul className="right hide-on-med-and-down">
-                            {this.gerarListaBotoes()}
-                        </ul>
-                    </div>
-                </nav>
-                <ul className="sidenav" id="mobile-menu">
-                    {this.gerarListaBotoes()}
-                </ul>
-            </>
-        )
-    }
-}
+export default BarraNavegacao;
