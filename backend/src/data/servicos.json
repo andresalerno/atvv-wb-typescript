@@ -1,0 +1,252 @@
+[
+    {
+        "id": 1,
+        "descricao": "Corte de cabelo feminino",
+        "preco": 131.81
+    },
+    {
+        "id": 2,
+        "descricao": "Corte de cabelo masculino",
+        "preco": 98.69
+    },
+    {
+        "id": 3,
+        "descricao": "Escova progressiva",
+        "preco": 630.91
+    },
+    {
+        "id": 4,
+        "descricao": "Pintura de cabelo",
+        "preco": 350.08
+    },
+    {
+        "id": 5,
+        "descricao": "Mechas e luzes",
+        "preco": 230.19
+    },
+    {
+        "id": 6,
+        "descricao": "Hidratação capilar",
+        "preco": 918.05
+    },
+    {
+        "id": 7,
+        "descricao": "Reconstrução capilar",
+        "preco": 170.15
+    },
+    {
+        "id": 8,
+        "descricao": "Botox capilar",
+        "preco": 755.68
+    },
+    {
+        "id": 9,
+        "descricao": "Selagem térmica",
+        "preco": 137.38
+    },
+    {
+        "id": 10,
+        "descricao": "Tratamento anticaspa",
+        "preco": 94.94
+    },
+    {
+        "id": 11,
+        "descricao": "Manicure simples",
+        "preco": 32.93
+    },
+    {
+        "id": 12,
+        "descricao": "Pedicure simples",
+        "preco": 89.97
+    },
+    {
+        "id": 13,
+        "descricao": "Unhas em gel",
+        "preco": 145.21
+    },
+    {
+        "id": 14,
+        "descricao": "Design de sobrancelhas",
+        "preco": 63.85
+    },
+    {
+        "id": 15,
+        "descricao": "Micropigmentação",
+        "preco": 239.55
+    },
+    {
+        "id": 16,
+        "descricao": "Massagem relaxante",
+        "preco": 144.74
+    },
+    {
+        "id": 17,
+        "descricao": "Massagem drenante",
+        "preco": 144.55
+    },
+    {
+        "id": 18,
+        "descricao": "Limpeza de pele",
+        "preco": 86.06
+    },
+    {
+        "id": 19,
+        "descricao": "Peeling facial",
+        "preco": 70.21
+    },
+    {
+        "id": 20,
+        "descricao": "Depilação com cera",
+        "preco": 77.03
+    },
+    {
+        "id": 21,
+        "descricao": "Alongamento de cílios",
+        "preco": 36.95
+    },
+    {
+        "id": 22,
+        "descricao": "Banho de brilho",
+        "preco": 179.13
+    },
+    {
+        "id": 23,
+        "descricao": "Corte infantil",
+        "preco": 107.46
+    },
+    {
+        "id": 24,
+        "descricao": "Modelagem de cachos",
+        "preco": 164.44
+    },
+    {
+        "id": 25,
+        "descricao": "Maquiagem social",
+        "preco": 135.08
+    },
+    {
+        "id": 26,
+        "descricao": "Maquiagem para eventos",
+        "preco": 141.09
+    },
+    {
+        "id": 27,
+        "descricao": "Tratamento antiqueda",
+        "preco": 179.91
+    },
+    {
+        "id": 28,
+        "descricao": "Coloração de sobrancelhas",
+        "preco": 93.67
+    },
+    {
+        "id": 29,
+        "descricao": "Alisamento com química",
+        "preco": 114.41
+    },
+    {
+        "id": 30,
+        "descricao": "Tratamento para pontas duplas",
+        "preco": 53.31
+    },
+    {
+        "id": 31,
+        "descricao": "Relaxamento capilar",
+        "preco": 117.34
+    },
+    {
+        "id": 32,
+        "descricao": "Massagem modeladora",
+        "preco": 43.31
+    },
+    {
+        "id": 33,
+        "descricao": "Sobrancelha fio a fio",
+        "preco": 56.61
+    },
+    {
+        "id": 34,
+        "descricao": "Tonalização capilar",
+        "preco": 53.90
+    },
+    {
+        "id": 35,
+        "descricao": "Corte bordado",
+        "preco": 145.23
+    },
+    {
+        "id": 36,
+        "descricao": "Escova modelada",
+        "preco": 68.03
+    },
+    {
+        "id": 37,
+        "descricao": "Escova definitiva",
+        "preco": 183.05
+    },
+    {
+        "id": 38,
+        "descricao": "Manicure com nail art",
+        "preco": 193.08
+    },
+    {
+        "id": 39,
+        "descricao": "Depilação facial",
+        "preco": 27.30
+    },
+    {
+        "id": 40,
+        "descricao": "Depilação corporal",
+        "preco": 187.57
+    },
+    {
+        "id": 41,
+        "descricao": "Tratamento de sobrancelhas",
+        "preco": 142.08
+    },
+    {
+        "id": 42,
+        "descricao": "Escova progressiva masculina",
+        "preco": 195.16
+    },
+    {
+        "id": 43,
+        "descricao": "Tratamento anti-frizz",
+        "preco": 92.71
+    },
+    {
+        "id": 44,
+        "descricao": "Corte com navalha",
+        "preco": 62.23
+    },
+    {
+        "id": 45,
+        "descricao": "Depilação a laser",
+        "preco": 104.17
+    },
+    {
+        "id": 46,
+        "descricao": "Clareamento de axilas",
+        "preco": 198.71
+    },
+    {
+        "id": 47,
+        "descricao": "Rejuvenescimento facial",
+        "preco": 89.02
+    },
+    {
+        "id": 48,
+        "descricao": "Maquiagem artística",
+        "preco": 53.54
+    },
+    {
+        "id": 49,
+        "descricao": "Alongamento de unhas",
+        "preco": 195.37
+    },
+    {
+        "id": 50,
+        "descricao": "Aplicação de cílios magnéticos",
+        "preco": 97.12
+    }
+]

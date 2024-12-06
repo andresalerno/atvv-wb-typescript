@@ -1,0 +1,339 @@
+[
+    {
+      "id": 1,
+      "clienteId": 23,
+      "dataEvento": "2024-03-18T00:00:00Z",
+      "totalGeral": 2464.25,
+      "itensDaCompra": [
+        {
+          "id": 1,
+          "compraId": 1,
+          "tipo": "produto",
+          "itemId": 10,
+          "quantidade": 2,
+          "subtotal": 487.17
+        },
+        {
+          "id": 2,
+          "compraId": 1,
+          "tipo": "produto",
+          "itemId": 36,
+          "quantidade": 1,
+          "subtotal": 421.55
+        },
+        {
+          "id": 3,
+          "compraId": 1,
+          "tipo": "servico",
+          "itemId": 40,
+          "quantidade": 1,
+          "subtotal": 331.63
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "clienteId": 40,
+      "dataEvento": "2024-11-28T00:00:00Z",
+      "totalGeral": 1273.45,
+      "itensDaCompra": [
+        {
+          "id": 4,
+          "compraId": 2,
+          "tipo": "produto",
+          "itemId": 9,
+          "quantidade": 5,
+          "subtotal": 41.76
+        },
+        {
+          "id": 5,
+          "compraId": 2,
+          "tipo": "produto",
+          "itemId": 44,
+          "quantidade": 5,
+          "subtotal": 94.23
+        },
+        {
+          "id": 6,
+          "compraId": 2,
+          "tipo": "servico",
+          "itemId": 9,
+          "quantidade": 5,
+          "subtotal": 404.28
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "clienteId": 36,
+      "dataEvento": "2024-12-06T00:00:00Z",
+      "totalGeral": 1285.01,
+      "itensDaCompra": [
+        {
+          "id": 7,
+          "compraId": 3,
+          "tipo": "produto",
+          "itemId": 16,
+          "quantidade": 1,
+          "subtotal": 133.18
+        },
+        {
+          "id": 8,
+          "compraId": 3,
+          "tipo": "servico",
+          "itemId": 29,
+          "quantidade": 5,
+          "subtotal": 582.58
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "clienteId": 14,
+      "dataEvento": "2024-10-02T00:00:00Z",
+      "totalGeral": 920.31,
+      "itensDaCompra": [
+        {
+          "id": 9,
+          "compraId": 4,
+          "tipo": "produto",
+          "itemId": 20,
+          "quantidade": 5,
+          "subtotal": 37.43
+        },
+        {
+          "id": 10,
+          "compraId": 4,
+          "tipo": "servico",
+          "itemId": 25,
+          "quantidade": 5,
+          "subtotal": 882.88
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "clienteId": 1,
+      "dataEvento": "2024-06-21T00:00:00Z",
+      "totalGeral": 501.93,
+      "itensDaCompra": [
+        {
+          "id": 11,
+          "compraId": 5,
+          "tipo": "produto",
+          "itemId": 8,
+          "quantidade": 2,
+          "subtotal": 434.14
+        },
+        {
+          "id": 12,
+          "compraId": 5,
+          "tipo": "produto",
+          "itemId": 32,
+          "quantidade": 1,
+          "subtotal": 67.79
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "clienteId": 1,
+      "dataEvento": "2024-05-23T00:00:00Z",
+      "totalGeral": 3078.19,
+      "itensDaCompra": [
+        {
+          "id": 13,
+          "compraId": 6,
+          "tipo": "produto",
+          "itemId": 12,
+          "quantidade": 1,
+          "subtotal": 121.09
+        },
+        {
+          "id": 14,
+          "compraId": 6,
+          "tipo": "produto",
+          "itemId": 15,
+          "quantidade": 2,
+          "subtotal": 343.55
+        },
+        {
+          "id": 15,
+          "compraId": 6,
+          "tipo": "produto",
+          "itemId": 1,
+          "quantidade": 4,
+          "subtotal": 356.27
+        },
+        {
+          "id": 16,
+          "compraId": 6,
+          "tipo": "produto",
+          "itemId": 29,
+          "quantidade": 5,
+          "subtotal": 458.27
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "clienteId": 36,
+      "dataEvento": "2024-12-28T00:00:00Z",
+      "totalGeral": 2478.46,
+      "itensDaCompra": [
+        {
+          "id": 17,
+          "compraId": 7,
+          "tipo": "produto",
+          "itemId": 39,
+          "quantidade": 1,
+          "subtotal": 242.87
+        },
+        {
+          "id": 18,
+          "compraId": 7,
+          "tipo": "servico",
+          "itemId": 40,
+          "quantidade": 2,
+          "subtotal": 708.66
+        },
+        {
+          "id": 19,
+          "compraId": 7,
+          "tipo": "servico",
+          "itemId": 22,
+          "quantidade": 5,
+          "subtotal": 966.01
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "clienteId": 14,
+      "dataEvento": "2024-07-20T00:00:00Z",
+      "totalGeral": 1962.25,
+      "itensDaCompra": [
+        {
+          "id": 20,
+          "compraId": 8,
+          "tipo": "produto",
+          "itemId": 14,
+          "quantidade": 1,
+          "subtotal": 380.93
+        },
+        {
+          "id": 21,
+          "compraId": 8,
+          "tipo": "produto",
+          "itemId": 26,
+          "quantidade": 5,
+          "subtotal": 266.75
+        },
+        {
+          "id": 22,
+          "compraId": 8,
+          "tipo": "servico",
+          "itemId": 27,
+          "quantidade": 4,
+          "subtotal": 868.55
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "clienteId": 38,
+      "dataEvento": "2024-09-26T00:00:00Z",
+      "totalGeral": 1689.06,
+      "itensDaCompra": [
+        {
+          "id": 23,
+          "compraId": 9,
+          "tipo": "produto",
+          "itemId": 19,
+          "quantidade": 1,
+          "subtotal": 207.01
+        },
+        {
+          "id": 24,
+          "compraId": 9,
+          "tipo": "servico",
+          "itemId": 43,
+          "quantidade": 3,
+          "subtotal": 368.75
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "clienteId": 35,
+      "dataEvento": "2024-04-01T00:00:00Z",
+      "totalGeral": 1593.61,
+      "itensDaCompra": [
+        {
+          "id": 25,
+          "compraId": 10,
+          "tipo": "produto",
+          "itemId": 33,
+          "quantidade": 3,
+          "subtotal": 110.21
+        },
+        {
+          "id": 26,
+          "compraId": 10,
+          "tipo": "servico",
+          "itemId": 4,
+          "quantidade": 5,
+          "subtotal": 835.88
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "clienteId": 29,
+      "dataEvento": "2024-05-11T00:00:00Z",
+      "totalGeral": 1984.23,
+      "itensDaCompra": [
+        {
+          "id": 27,
+          "compraId": 11,
+          "tipo": "produto",
+          "itemId": 17,
+          "quantidade": 3,
+          "subtotal": 300.34
+        },
+        {
+          "id": 28,
+          "compraId": 11,
+          "tipo": "servico",
+          "itemId": 15,
+          "quantidade": 4,
+          "subtotal": 1200.22
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "clienteId": 5,
+      "dataEvento": "2024-06-22T00:00:00Z",
+      "totalGeral": 1845.56,
+      "itensDaCompra": [
+        {
+          "id": 29,
+          "compraId": 12,
+          "tipo": "produto",
+          "itemId": 5,
+          "quantidade": 4,
+          "subtotal": 500.00
+        },
+        {
+          "id": 30,
+          "compraId": 12,
+          "tipo": "servico",
+          "itemId": 11,
+          "quantidade": 5,
+          "subtotal": 1345.56
+        }
+      ]
+    }
+  ]
+  

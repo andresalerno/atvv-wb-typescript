@@ -1,0 +1,402 @@
+[
+    {
+      "id": 1,
+      "nome": "Cliente 1",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "001.002.003-00",
+        "dataEmissao": "2000-04-10"
+      },
+      "genero": "FEMININO"
+    },
+    {
+      "id": 2,
+      "nome": "Cliente 2",
+      "nomeSocial": "Social 2",
+      "cpf": {
+        "valor": "002.004.006-00",
+        "dataEmissao": "2000-07-19"
+      },
+      "genero": "OUTRO"
+    },
+    {
+      "id": 3,
+      "nome": "Cliente 3",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "003.006.009-00",
+        "dataEmissao": "2000-10-27"
+      },
+      "genero": "NAODECLARAR"
+    },
+    {
+      "id": 4,
+      "nome": "Cliente 4",
+      "nomeSocial": "Social 4",
+      "cpf": {
+        "valor": "004.008.012-00",
+        "dataEmissao": "2001-02-04"
+      },
+      "genero": "MASCULINO"
+    },
+    {
+      "id": 5,
+      "nome": "Cliente 5",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "005.010.015-00",
+        "dataEmissao": "2001-05-15"
+      },
+      "genero": "FEMININO"
+    },
+    {
+      "id": 6,
+      "nome": "Cliente 6",
+      "nomeSocial": "Social 6",
+      "cpf": {
+        "valor": "006.012.018-00",
+        "dataEmissao": "2001-08-23"
+      },
+      "genero": "OUTRO"
+    },
+    {
+      "id": 7,
+      "nome": "Cliente 7",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "007.014.021-00",
+        "dataEmissao": "2001-12-01"
+      },
+      "genero": "NAODECLARAR"
+    },
+    {
+      "id": 8,
+      "nome": "Cliente 8",
+      "nomeSocial": "Social 8",
+      "cpf": {
+        "valor": "008.016.024-00",
+        "dataEmissao": "2002-03-11"
+      },
+      "genero": "MASCULINO"
+    },
+    {
+      "id": 9,
+      "nome": "Cliente 9",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "009.018.027-00",
+        "dataEmissao": "2002-06-19"
+      },
+      "genero": "FEMININO"
+    },
+    {
+      "id": 10,
+      "nome": "Cliente 10",
+      "nomeSocial": "Social 10",
+      "cpf": {
+        "valor": "010.020.030-00",
+        "dataEmissao": "2002-09-27"
+      },
+      "genero": "OUTRO"
+    },
+    {
+      "id": 11,
+      "nome": "Cliente 11",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "011.022.033-00",
+        "dataEmissao": "2003-01-05"
+      },
+      "genero": "NAODECLARAR"
+    },
+    {
+      "id": 12,
+      "nome": "Cliente 12",
+      "nomeSocial": "Social 12",
+      "cpf": {
+        "valor": "012.024.036-00",
+        "dataEmissao": "2003-04-15"
+      },
+      "genero": "MASCULINO"
+    },
+    {
+      "id": 13,
+      "nome": "Cliente 13",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "013.026.039-00",
+        "dataEmissao": "2003-07-24"
+      },
+      "genero": "FEMININO"
+    },
+    {
+      "id": 14,
+      "nome": "Cliente 14",
+      "nomeSocial": "Social 14",
+      "cpf": {
+        "valor": "014.028.042-00",
+        "dataEmissao": "2003-11-01"
+      },
+      "genero": "OUTRO"
+    },
+    {
+      "id": 15,
+      "nome": "Cliente 15",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "015.030.045-00",
+        "dataEmissao": "2004-02-09"
+      },
+      "genero": "NAODECLARAR"
+    },
+    {
+      "id": 16,
+      "nome": "Cliente 16",
+      "nomeSocial": "Social 16",
+      "cpf": {
+        "valor": "016.032.048-00",
+        "dataEmissao": "2004-05-19"
+      },
+      "genero": "MASCULINO"
+    },
+    {
+      "id": 17,
+      "nome": "Cliente 17",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "017.034.051-00",
+        "dataEmissao": "2004-08-27"
+      },
+      "genero": "FEMININO"
+    },
+    {
+      "id": 18,
+      "nome": "Cliente 18",
+      "nomeSocial": "Social 18",
+      "cpf": {
+        "valor": "018.036.054-00",
+        "dataEmissao": "2004-12-05"
+      },
+      "genero": "OUTRO"
+    },
+    {
+      "id": 19,
+      "nome": "Cliente 19",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "019.038.057-00",
+        "dataEmissao": "2005-03-15"
+      },
+      "genero": "NAODECLARAR"
+    },
+    {
+      "id": 20,
+      "nome": "Cliente 20",
+      "nomeSocial": "Social 20",
+      "cpf": {
+        "valor": "020.040.060-00",
+        "dataEmissao": "2005-06-23"
+      },
+      "genero": "MASCULINO"
+    },
+    {
+      "id": 21,
+      "nome": "Cliente 21",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "021.042.063-00",
+        "dataEmissao": "2005-10-01"
+      },
+      "genero": "FEMININO"
+    },
+    {
+      "id": 22,
+      "nome": "Cliente 22",
+      "nomeSocial": "Social 22",
+      "cpf": {
+        "valor": "022.044.066-00",
+        "dataEmissao": "2006-01-09"
+      },
+      "genero": "OUTRO"
+    },
+    {
+      "id": 23,
+      "nome": "Cliente 23",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "023.046.069-00",
+        "dataEmissao": "2006-04-19"
+      },
+      "genero": "NAODECLARAR"
+    },
+    {
+      "id": 24,
+      "nome": "Cliente 24",
+      "nomeSocial": "Social 24",
+      "cpf": {
+        "valor": "024.048.072-00",
+        "dataEmissao": "2006-07-28"
+      },
+      "genero": "MASCULINO"
+    },
+    {
+      "id": 25,
+      "nome": "Cliente 25",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "025.050.075-00",
+        "dataEmissao": "2006-11-05"
+      },
+      "genero": "FEMININO"
+    },
+    {
+      "id": 26,
+      "nome": "Cliente 26",
+      "nomeSocial": "Social 26",
+      "cpf": {
+        "valor": "026.052.078-00",
+        "dataEmissao": "2007-02-13"
+      },
+      "genero": "OUTRO"
+    },
+    {
+      "id": 27,
+      "nome": "Cliente 27",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "027.054.081-00",
+        "dataEmissao": "2007-05-24"
+      },
+      "genero": "NAODECLARAR"
+    },
+    {
+      "id": 28,
+      "nome": "Cliente 28",
+      "nomeSocial": "Social 28",
+      "cpf": {
+        "valor": "028.056.084-00",
+        "dataEmissao": "2007-09-01"
+      },
+      "genero": "MASCULINO"
+    },
+    {
+      "id": 29,
+      "nome": "Cliente 29",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "029.058.087-00",
+        "dataEmissao": "2007-12-10"
+      },
+      "genero": "FEMININO"
+    },
+    {
+      "id": 30,
+      "nome": "Cliente 30",
+      "nomeSocial": "Social 30",
+      "cpf": {
+        "valor": "030.060.090-00",
+        "dataEmissao": "2008-03-19"
+      },
+      "genero": "OUTRO"
+    },
+    {
+      "id": 31,
+      "nome": "Cliente 31",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "031.062.093-00",
+        "dataEmissao": "2008-06-27"
+      },
+      "genero": "NAODECLARAR"
+    },
+    {
+      "id": 32,
+      "nome": "Cliente 32",
+      "nomeSocial": "Social 32",
+      "cpf": {
+        "valor": "032.064.096-00",
+        "dataEmissao": "2008-10-05"
+      },
+      "genero": "MASCULINO"
+    },
+    {
+      "id": 33,
+      "nome": "Cliente 33",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "033.066.099-00",
+        "dataEmissao": "2009-01-13"
+      },
+      "genero": "FEMININO"
+    },
+    {
+      "id": 34,
+      "nome": "Cliente 34",
+      "nomeSocial": "Social 34",
+      "cpf": {
+        "valor": "034.068.102-00",
+        "dataEmissao": "2009-04-23"
+      },
+      "genero": "OUTRO"
+    },
+    {
+      "id": 35,
+      "nome": "Cliente 35",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "035.070.105-00",
+        "dataEmissao": "2009-08-01"
+      },
+      "genero": "NAODECLARAR"
+    },
+    {
+      "id": 36,
+      "nome": "Cliente 36",
+      "nomeSocial": "Social 36",
+      "cpf": {
+        "valor": "036.072.108-00",
+        "dataEmissao": "2009-11-09"
+      },
+      "genero": "MASCULINO"
+    },
+    {
+      "id": 37,
+      "nome": "Cliente 37",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "037.074.111-00",
+        "dataEmissao": "2010-02-17"
+      },
+      "genero": "FEMININO"
+    },
+    {
+      "id": 38,
+      "nome": "Cliente 38",
+      "nomeSocial": "Social 38",
+      "cpf": {
+        "valor": "038.076.114-00",
+        "dataEmissao": "2010-05-28"
+      },
+      "genero": "OUTRO"
+    },
+    {
+      "id": 39,
+      "nome": "Cliente 39",
+      "nomeSocial": "",
+      "cpf": {
+        "valor": "039.078.117-00",
+        "dataEmissao": "2010-09-05"
+      },
+      "genero": "NAODECLARAR"
+    },
+    {
+      "id": 40,
+      "nome": "Cliente 40",
+      "nomeSocial": "Social 40",
+      "cpf": {
+        "valor": "040.080.120-00",
+        "dataEmissao": "2010-12-14"
+      },
+      "genero": "MASCULINO"
+    }
+  ]

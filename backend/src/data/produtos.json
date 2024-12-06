@@ -1,0 +1,252 @@
+[
+    {
+        "id": 1,
+        "nome": "Shampoo Item 1",
+        "preco": 133.04
+    },
+    {
+        "id": 2,
+        "nome": "Condicionador Equipamento 2",
+        "preco": 317.94
+    },
+    {
+        "id": 3,
+        "nome": "Máscara Produto 3",
+        "preco": 387.01
+    },
+    {
+        "id": 4,
+        "nome": "Óleo Capilar Equipamento 4",
+        "preco": 63.54
+    },
+    {
+        "id": 5,
+        "nome": "Serum Equipamento 5",
+        "preco": 486.61
+    },
+    {
+        "id": 6,
+        "nome": "Creme Capilar Item 6",
+        "preco": 296.11
+    },
+    {
+        "id": 7,
+        "nome": "Leave-in Acessório 7",
+        "preco": 476.18
+    },
+    {
+        "id": 8,
+        "nome": "Ampola Equipamento 8",
+        "preco": 484.72
+    },
+    {
+        "id": 9,
+        "nome": "Kit Capilar Equipamento 9",
+        "preco": 435.42
+    },
+    {
+        "id": 10,
+        "nome": "Protetor Térmico Produto 10",
+        "preco": 385.58
+    },
+    {
+        "id": 11,
+        "nome": "Modelador Produto 11",
+        "preco": 135.03
+    },
+    {
+        "id": 12,
+        "nome": "Tônico Capilar Item 12",
+        "preco": 273.96
+    },
+    {
+        "id": 13,
+        "nome": "Escova Acessório 13",
+        "preco": 365.09
+    },
+    {
+        "id": 14,
+        "nome": "Pente Objeto 14",
+        "preco": 82.99
+    },
+    {
+        "id": 15,
+        "nome": "Secador Item 15",
+        "preco": 175.87
+    },
+    {
+        "id": 16,
+        "nome": "Chapinha Item 16",
+        "preco": 326.64
+    },
+    {
+        "id": 17,
+        "nome": "Difusor Acessório 17",
+        "preco": 77.26
+    },
+    {
+        "id": 18,
+        "nome": "Spray Fixador Acessório 18",
+        "preco": 150.62
+    },
+    {
+        "id": 19,
+        "nome": "Mousse Objeto 19",
+        "preco": 95.6
+    },
+    {
+        "id": 20,
+        "nome": "Gel Capilar Objeto 20",
+        "preco": 29.16
+    },
+    {
+        "id": 21,
+        "nome": "Cera Capilar Objeto 21",
+        "preco": 257.73
+    },
+    {
+        "id": 22,
+        "nome": "Condicionador Produto 22",
+        "preco": 17.28
+    },
+    {
+        "id": 23,
+        "nome": "Máscara Produto 23",
+        "preco": 260.68
+    },
+    {
+        "id": 24,
+        "nome": "Serum Acessório 24",
+        "preco": 129.28
+    },
+    {
+        "id": 25,
+        "nome": "Protetor Equipamento 25",
+        "preco": 354.25
+    },
+    {
+        "id": 26,
+        "nome": "Modelador Produto 26",
+        "preco": 337.24
+    },
+    {
+        "id": 27,
+        "nome": "Kit Capilar Produto 27",
+        "preco": 240.25
+    },
+    {
+        "id": 28,
+        "nome": "Shampoo Acessório 28",
+        "preco": 267.71
+    },
+    {
+        "id": 29,
+        "nome": "Difusor Acessório 29",
+        "preco": 168.62
+    },
+    {
+        "id": 30,
+        "nome": "Secador Equipamento 30",
+        "preco": 38.59
+    },
+    {
+        "id": 31,
+        "nome": "Chapinha Equipamento 31",
+        "preco": 118.38
+    },
+    {
+        "id": 32,
+        "nome": "Ampola Equipamento 32",
+        "preco": 303.22
+    },
+    {
+        "id": 33,
+        "nome": "Máscara Equipamento 33",
+        "preco": 419.15
+    },
+    {
+        "id": 34,
+        "nome": "Spray Fixador Objeto 34",
+        "preco": 365.32
+    },
+    {
+        "id": 35,
+        "nome": "Protetor Equipamento 35",
+        "preco": 215.44
+    },
+    {
+        "id": 36,
+        "nome": "Leave-in Produto 36",
+        "preco": 360.83
+    },
+    {
+        "id": 37,
+        "nome": "Óleo Capilar Produto 37",
+        "preco": 31.38
+    },
+    {
+        "id": 38,
+        "nome": "Cera Capilar Produto 38",
+        "preco": 28.04
+    },
+    {
+        "id": 39,
+        "nome": "Serum Acessório 39",
+        "preco": 490.23
+    },
+    {
+        "id": 40,
+        "nome": "Shampoo Equipamento 40",
+        "preco": 169.87
+    },
+    {
+        "id": 41,
+        "nome": "Condicionador Equipamento 41",
+        "preco": 403.19
+    },
+    {
+        "id": 42,
+        "nome": "Gel Capilar Produto 42",
+        "preco": 386.06
+    },
+    {
+        "id": 43,
+        "nome": "Escova Acessório 43",
+        "preco": 80.59
+    },
+    {
+        "id": 44,
+        "nome": "Pente Objeto 44",
+        "preco": 325.91
+    },
+    {
+        "id": 45,
+        "nome": "Difusor Objeto 45",
+        "preco": 140.95
+    },
+    {
+        "id": 46,
+        "nome": "Chapinha Equipamento 46",
+        "preco": 240.35
+    },
+    {
+        "id": 47,
+        "nome": "Secador Item 47",
+        "preco": 225.29
+    },
+    {
+        "id": 48,
+        "nome": "Kit Capilar Item 48",
+        "preco": 14.58
+    },
+    {
+        "id": 49,
+        "nome": "Ampola Produto 49",
+        "preco": 263.46
+    },
+    {
+        "id": 50,
+        "nome": "Tônico Capilar Produto 50",
+        "preco": 196.64
+    }
+]
