@@ -1,8 +1,77 @@
 import { Request, Response } from 'express';
 import Produto from '@models/Produto';
+import ItemCompra from '@models/ItemCompra';
+import sequelize from '@connections';
+import Compra from '@models/Compra';
+import Cliente from '@models/Cliente';
 
 class ProdutoController {
-  // Criar um novo produto
+  
+  public async getProdutosMaisConsumidosPorGenero(req: Request, res: Response): Promise<void> {
+    try {
+        const produtosPorGenero = await ItemCompra.findAll({
+            attributes: [
+                [sequelize.col("cliente.genero"), "genero"], // Gênero do cliente
+                "itemId", // ID do produto
+                [sequelize.fn("SUM", sequelize.col("quantidade")), "totalConsumido"], // Soma das quantidades consumidas
+            ],
+            include: [
+                {
+                    model: Compra,
+                    as: "compra", // Relacionamento ItemCompra -> Compra
+                    include: [
+                        {
+                            model: Cliente,
+                            as: "cliente", // Relacionamento Compra -> Cliente
+                            attributes: ["genero"], // Gênero do cliente
+                        },
+                    ],
+                },
+                {
+                    model: Produto,
+                    as: "produtoAssociado", // Relacionamento ItemCompra -> Produto
+                    attributes: ["id", "nome", "preco"], // Detalhes do produto
+                },
+            ],
+            group: ["cliente.genero", "itemId", "produtoAssociado.id"], // Agrupa por gênero e produto
+            order: [[sequelize.literal("totalConsumido"), "DESC"]], // Ordena pelo total consumido em ordem decrescente
+        });
+
+        res.status(200).json(produtosPorGenero);
+    } catch (error) {
+        console.error("Erro ao buscar os produtos mais consumidos por gênero:", error);
+        res.status(500).json({ error: "Erro ao buscar os produtos mais consumidos por gênero." });
+    }
+}
+
+
+  public async getProdutosMaisConsumidos(req: Request, res: Response): Promise<void> {
+    try {
+        const produtosMaisConsumidos = await ItemCompra.findAll({
+            attributes: [
+                "itemId", // ID do produto
+                [sequelize.fn("SUM", sequelize.col("quantidade")), "totalConsumido"], // Soma as quantidades consumidas
+            ],
+            include: [
+                {
+                    model: Produto,
+                    as: "produtoAssociado", // Alias usado no relacionamento ItemCompra -> Produto
+                    attributes: ["id", "nome", "preco"], // Inclui detalhes do produto
+                },
+            ],
+            group: ["itemId", "produtoAssociado.id"], // Agrupa por produto
+            order: [[sequelize.literal("totalConsumido"), "DESC"]], // Ordena em ordem decrescente
+            limit: 10, // Opcional: limite de 10 produtos
+        });
+
+        res.status(200).json(produtosMaisConsumidos);
+    } catch (error) {
+        console.error("Erro ao buscar os produtos mais consumidos:", error);
+        res.status(500).json({ error: "Erro ao buscar os produtos mais consumidos." });
+    }
+}
+
+
   public async create(req: Request, res: Response): Promise<void> {
     try {
       const { nome, preco } = req.body;

@@ -208,3 +208,4 @@ sequelize
     console.error('Erro ao sincronizar o banco de dados:', error);
     process.exit(1);
   });
+

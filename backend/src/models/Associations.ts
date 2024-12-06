@@ -8,11 +8,11 @@ export default function setupAssociations() {
   // Cliente - Compra (Um para muitos)
   Cliente.hasMany(Compra, {
     foreignKey: 'clienteId',
-    as: 'comprasCliente', // Cada cliente pode ter muitas compras
+    as: 'comprasCliente',
   });
   Compra.belongsTo(Cliente, {
     foreignKey: 'clienteId',
-    as: 'cliente', // Cada compra pertence a um cliente
+    as: 'cliente',
   });
 
   // Compra - ItemCompra (Um para muitos)

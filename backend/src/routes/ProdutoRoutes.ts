@@ -9,4 +9,11 @@ router.get('/:id', ProdutoController.findOne);
 router.put('/:id', ProdutoController.update);
 router.delete('/:id', ProdutoController.delete);
 
+router.get("/mais-consumidos", ProdutoController.getProdutosMaisConsumidos);
+
+router.get("/produtos-mais-consumidos-por-genero", ProdutoController.getProdutosMaisConsumidosPorGenero);
+
+
+
+
 export default router;
