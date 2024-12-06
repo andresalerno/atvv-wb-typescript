@@ -48,10 +48,8 @@ class ClienteController {
                     id: cliente.id,
                     nome: cliente.nome,
                     nomeSocial: cliente.nomeSocial,
-                    cpf: {
-                        valor: cliente.cpfValor,
-                        dataEmissao: cliente.cpfDataEmissao,
-                    },
+                    cpfValor: cliente.cpfValor,
+                    cpfDataEmissao: cliente.cpfDataEmissao,
                     genero: cliente.genero,
                 }));
                 res.status(200).json(clientesFormatados);

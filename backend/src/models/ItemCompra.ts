@@ -30,8 +30,8 @@ class ItemCompra extends Model<ItemCompraAttributes, ItemCompraCreationAttribute
 
   public static associate() {
     ItemCompra.belongsTo(Compra, { foreignKey: 'compraId', as: 'compra' });
-    ItemCompra.belongsTo(Produto, { foreignKey: 'itemId', as: 'produtoAssociado', constraints: false, scope: { tipo: 'produto' } });
-    ItemCompra.belongsTo(Servico, { foreignKey: 'itemId', as: 'servicoAssociado', constraints: false, scope: { tipo: 'servico' } });
+    ItemCompra.belongsTo(Produto, { foreignKey: 'itemId', as: 'produtoAssociado' });
+    ItemCompra.belongsTo(Servico, { foreignKey: 'itemId', as: 'servicoAssociado' });    
   }
 }
 

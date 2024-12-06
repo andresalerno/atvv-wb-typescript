@@ -6,68 +6,83 @@ import ItemCompra from '@models/ItemCompra';
 import Cliente from '@models/Cliente';
 import Produto from '@models/Produto';
 import Servico from '@models/Servico';
+import addItensCompra from './funca';
 
 class CompraController {
   // Função auxiliar para adicionar itens e calcular o valor total
-  private async addItensCompra(itensCompra: any[], compraId: number, transaction: Transaction): Promise<number> {
-    let valorTotal = 0;
-
-    for (const item of itensCompra) {
-      const { tipo, itemId, quantidade } = item;
-
-      if (tipo === 'produto') {
-        const produto = await Produto.findByPk(itemId);
-        if (produto) {
-          await ItemCompra.create({
-            compraId,
-            tipo,
-            itemId,
-            quantidade,
-            precoUnitario: produto.preco,
-            subtotal: produto.preco * quantidade,
-          }, { transaction });
-          valorTotal += produto.preco * quantidade;
-        }
-      } else if (tipo === 'servico') {
-        const servico = await Servico.findByPk(itemId);
-        if (servico) {
-          await ItemCompra.create({
-            compraId,
-            tipo,
-            itemId,
-            quantidade,
-            precoUnitario: servico.preco,
-            subtotal: servico.preco * quantidade,
-          }, { transaction });
-          valorTotal += servico.preco * quantidade;
-        }
-      }
-    }
-
-    return valorTotal;
-  }
-
   // Criar uma nova compra
   public async create(req: Request, res: Response): Promise<void> {
     const transaction: Transaction = await sequelize.transaction();
     try {
       const { clienteId, itensCompra } = req.body;
-
-      if (!clienteId || !itensCompra || itensCompra.length === 0) {
+  
+      if (!clienteId || !itensCompra || !Array.isArray(itensCompra) || itensCompra.length === 0) {
         res.status(400).json({ error: 'Cliente e itens da compra são obrigatórios.' });
         return;
       }
-
-      // Criar a compra
-      const compra = await Compra.create({ clienteId, dataEvento: new Date(), totalGeral: 0 }, { transaction });
-
-      // Adicionar itens da compra e calcular valor total
-      const valorTotal = await this.addItensCompra(itensCompra, compra.id, transaction);
-
-      // Atualizar valor total da compra
+  
+      // Create Compra
+      const compra = await Compra.create(
+        { clienteId, dataEvento: new Date(), totalGeral: 0 },
+        { transaction }
+      );
+  
+      let valorTotal = 0;
+  
+      for (const item of itensCompra) {
+        try {
+          const { tipo, itemId, quantidade } = item;
+  
+          if (!tipo || !itemId || !quantidade) {
+            console.warn(`Invalid item format:`, item);
+            continue;
+          }
+  
+          const produtoOrServico =
+            tipo === 'produto'
+              ? await Produto.findByPk(itemId)
+              : await Servico.findByPk(itemId);
+  
+          if (!produtoOrServico) {
+            console.warn(`${tipo} not found: ID ${itemId}`);
+            continue;
+          }
+  
+          const preco = produtoOrServico.preco;
+          const subtotal = preco * quantidade;
+  
+          console.log(`Creating ItemCompra:`, {
+            compraId: compra.id,
+            tipo,
+            itemId,
+            quantidade,
+            precoUnitario: preco,
+            subtotal,
+          });
+  
+          await ItemCompra.create(
+            {
+              compraId: compra.id,
+              tipo,
+              itemId,
+              quantidade,
+              precoUnitario: preco,
+              subtotal,
+            },
+            { transaction }
+          );
+  
+          valorTotal += subtotal;
+        } catch (itemError) {
+          console.error(`Error processing item:`, item, itemError);
+          throw itemError;
+        }
+      }
+  
+      // Update Compra total
       compra.totalGeral = valorTotal;
       await compra.save({ transaction });
-
+  
       await transaction.commit();
       res.status(201).json(compra);
     } catch (error) {
@@ -76,6 +91,7 @@ class CompraController {
       res.status(500).json({ error: 'Erro ao criar compra.' });
     }
   }
+  
 
   // Atualizar uma compra por ID
   public async update(req: Request, res: Response): Promise<void> {
@@ -99,7 +115,7 @@ class CompraController {
       await ItemCompra.destroy({ where: { compraId: compra.id }, transaction });
 
       // Adicionar novos itens e calcular valor total
-      const valorTotal = await this.addItensCompra(itensCompra, compra.id, transaction);
+      const valorTotal = await addItensCompra(itensCompra, compra.id, transaction);
 
       // Atualizar valor total da compra
       compra.totalGeral = valorTotal;

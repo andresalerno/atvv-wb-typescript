@@ -29,10 +29,10 @@ class CompraController {
                     const produto = yield Produto_1.default.findByPk(itemId);
                     if (produto) {
                         yield ItemCompra_1.default.create({
-                            compraId,
-                            tipo,
-                            itemId,
-                            quantidade,
+                            compraId: compraId,
+                            tipo: tipo,
+                            itemId: itemId,
+                            quantidade: quantidade,
                             precoUnitario: produto.preco,
                             subtotal: produto.preco * quantidade,
                         }, { transaction });
@@ -123,13 +123,13 @@ class CompraController {
             try {
                 const compras = yield Compra_1.default.findAll({
                     include: [
-                        { model: Cliente_1.default, as: 'cliente', attributes: ['nome'] },
+                        { model: Cliente_1.default, as: 'cliente', attributes: ['id', 'nome'] },
                         {
                             model: ItemCompra_1.default,
                             as: 'itensDaCompra',
                             include: [
-                                { model: Produto_1.default, as: 'produtoAssociado', attributes: ['nome', 'preco'], required: false },
-                                { model: Servico_1.default, as: 'servicoAssociado', attributes: ['nome', 'preco'], required: false },
+                                { model: Produto_1.default, as: 'produtoAssociado', attributes: ['id', 'nome', 'preco'], required: false },
+                                { model: Servico_1.default, as: 'servicoAssociado', attributes: ['id', 'nome', 'preco'], required: false },
                             ],
                         },
                     ],

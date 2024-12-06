@@ -23,7 +23,7 @@ class Compra extends Model<CompraAttributes, CompraCreationAttributes> implement
 
   public static associate() {
     Compra.belongsTo(Cliente, { foreignKey: 'clienteId', as: 'cliente' });
-    Compra.hasMany(ItemCompra, { foreignKey: 'compraId', as: 'itensDaCompra' }); // Certifique-se de usar 'itensDaCompra' para correspondência com o JSON
+    Compra.hasMany(ItemCompra, { foreignKey: 'compraId', as: 'itensDaCompra' });
   }
 }
 
