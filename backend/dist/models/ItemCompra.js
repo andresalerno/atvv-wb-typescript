@@ -11,8 +11,8 @@ const Servico_1 = __importDefault(require("./Servico"));
 class ItemCompra extends sequelize_1.Model {
     static associate() {
         ItemCompra.belongsTo(Compra_1.default, { foreignKey: 'compraId', as: 'compra' });
-        ItemCompra.belongsTo(Produto_1.default, { foreignKey: 'itemId', as: 'produtoAssociado', constraints: false, scope: { tipo: 'produto' } });
-        ItemCompra.belongsTo(Servico_1.default, { foreignKey: 'itemId', as: 'servicoAssociado', constraints: false, scope: { tipo: 'servico' } });
+        ItemCompra.belongsTo(Produto_1.default, { foreignKey: 'itemId', as: 'produtoAssociado' });
+        ItemCompra.belongsTo(Servico_1.default, { foreignKey: 'itemId', as: 'servicoAssociado' });
     }
 }
 ItemCompra.init({

@@ -17,6 +17,8 @@ import Compra from '@models/Compra';
 import CompraProduto from '@models/CompraProduto';
 import CompraServico from '@models/CompraServico';
 import ItemCompra from '@models/ItemCompra';
+import { ClienteController } from '@controllers/Cliente/ClienteController';
+
 
 dotenv.config();
 

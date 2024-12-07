@@ -1,5 +1,6 @@
 import { Router } from "express";
-import ClienteController from "@controllers/Cliente/ClienteController";
+// import { ClienteController } from "../controllers/Cliente/ClienteController";
+import { ClienteController } from "@controllers/Cliente/ClienteController";
 
 const router = Router();
 
@@ -11,15 +12,12 @@ router.put("/:id", ClienteController.update);
 router.delete("/:id", ClienteController.delete);
 
 
-router.get("/top-clientes", ClienteController.getTopClientes);
-
+// router.get("/top-clientes", ClienteController.getTopClientes);
 router.get("/genero/:genero", ClienteController.getClientesByGenero);
 
-router.get("/agrupados-por-genero", ClienteController.getClientesGroupedByGenero);
-
-router.get("/bottom-clientes", ClienteController.getBottom10Clientes);
-
-router.get("/top5-clientes", ClienteController.getTop5Clientes);
+// router.get("/agrupados-por-genero", ClienteController.getClientesGroupedByGenero);
+// router.get("/bottom-clientes", ClienteController.getBottom10Clientes);
+// router.get("/top5-clientes", ClienteController.getTop5Clientes);
 
 
 

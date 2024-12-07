@@ -10,7 +10,7 @@ const ItemCompra_1 = __importDefault(require("./ItemCompra"));
 class Compra extends sequelize_1.Model {
     static associate() {
         Compra.belongsTo(Cliente_1.default, { foreignKey: 'clienteId', as: 'cliente' });
-        Compra.hasMany(ItemCompra_1.default, { foreignKey: 'compraId', as: 'itensDaCompra' }); // Certifique-se de usar 'itensDaCompra' para correspondência com o JSON
+        Compra.hasMany(ItemCompra_1.default, { foreignKey: 'compraId', as: 'itensDaCompra' });
     }
 }
 Compra.init({

@@ -12,4 +12,6 @@ router.get('/', ServicoController_1.default.findAll);
 router.get('/:id', ServicoController_1.default.findOne);
 router.put('/:id', ServicoController_1.default.update);
 router.delete('/:id', ServicoController_1.default.delete);
+router.get("/mais-consumidos", ServicoController_1.default.getServicosMaisConsumidos);
+router.get("/servicos-mais-consumidos-por-genero", ServicoController_1.default.getServicosMaisConsumidosPorGenero);
 exports.default = router;

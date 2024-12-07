@@ -13,8 +13,76 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Servico_1 = __importDefault(require("@models/Servico"));
+const ItemCompra_1 = __importDefault(require("@models/ItemCompra"));
+const _connections_1 = __importDefault(require("@connections"));
+const Compra_1 = __importDefault(require("@models/Compra"));
+const Cliente_1 = __importDefault(require("@models/Cliente"));
 class ServicoController {
-    // Criar um novo serviço
+    getServicosMaisConsumidosPorGenero(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const servicosPorGenero = yield ItemCompra_1.default.findAll({
+                    attributes: [
+                        [_connections_1.default.col("cliente.genero"), "genero"], // Gênero do cliente
+                        "itemId", // ID do serviço
+                        [_connections_1.default.fn("SUM", _connections_1.default.col("quantidade")), "totalConsumido"], // Soma das quantidades consumidas
+                    ],
+                    include: [
+                        {
+                            model: Compra_1.default,
+                            as: "compra", // Relacionamento ItemCompra -> Compra
+                            include: [
+                                {
+                                    model: Cliente_1.default,
+                                    as: "cliente", // Relacionamento Compra -> Cliente
+                                    attributes: ["genero"], // Gênero do cliente
+                                },
+                            ],
+                        },
+                        {
+                            model: Servico_1.default,
+                            as: "servicoAssociado", // Relacionamento ItemCompra -> Servico
+                            attributes: ["id", "nome", "preco"], // Detalhes do serviço
+                        },
+                    ],
+                    group: ["cliente.genero", "itemId", "servicoAssociado.id"], // Agrupa por gênero e serviço
+                    order: [[_connections_1.default.literal("totalConsumido"), "DESC"]], // Ordena pelo total consumido em ordem decrescente
+                });
+                res.status(200).json(servicosPorGenero);
+            }
+            catch (error) {
+                console.error("Erro ao buscar os serviços mais consumidos por gênero:", error);
+                res.status(500).json({ error: "Erro ao buscar os serviços mais consumidos por gênero." });
+            }
+        });
+    }
+    getServicosMaisConsumidos(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const servicosMaisConsumidos = yield ItemCompra_1.default.findAll({
+                    attributes: [
+                        "itemId", // ID do serviço
+                        [_connections_1.default.fn("SUM", _connections_1.default.col("quantidade")), "totalConsumido"], // Soma as quantidades consumidas
+                    ],
+                    include: [
+                        {
+                            model: Servico_1.default,
+                            as: "servicoAssociado", // Alias usado no relacionamento ItemCompra -> Servico
+                            attributes: ["id", "nome", "preco"], // Inclui detalhes do serviço
+                        },
+                    ],
+                    group: ["itemId", "servicoAssociado.id"], // Agrupa por serviço
+                    order: [[_connections_1.default.literal("totalConsumido"), "DESC"]], // Ordena em ordem decrescente
+                    limit: 10, // Opcional: limite de 10 serviços
+                });
+                res.status(200).json(servicosMaisConsumidos);
+            }
+            catch (error) {
+                console.error("Erro ao buscar os serviços mais consumidos:", error);
+                res.status(500).json({ error: "Erro ao buscar os serviços mais consumidos." });
+            }
+        });
+    }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

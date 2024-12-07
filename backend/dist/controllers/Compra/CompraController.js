@@ -18,60 +18,62 @@ const ItemCompra_1 = __importDefault(require("@models/ItemCompra"));
 const Cliente_1 = __importDefault(require("@models/Cliente"));
 const Produto_1 = __importDefault(require("@models/Produto"));
 const Servico_1 = __importDefault(require("@models/Servico"));
+const funca_1 = __importDefault(require("./funca"));
 class CompraController {
     // Função auxiliar para adicionar itens e calcular o valor total
-    addItensCompra(itensCompra, compraId, transaction) {
-        return __awaiter(this, void 0, void 0, function* () {
-            let valorTotal = 0;
-            for (const item of itensCompra) {
-                const { tipo, itemId, quantidade } = item;
-                if (tipo === 'produto') {
-                    const produto = yield Produto_1.default.findByPk(itemId);
-                    if (produto) {
-                        yield ItemCompra_1.default.create({
-                            compraId: compraId,
-                            tipo: tipo,
-                            itemId: itemId,
-                            quantidade: quantidade,
-                            precoUnitario: produto.preco,
-                            subtotal: produto.preco * quantidade,
-                        }, { transaction });
-                        valorTotal += produto.preco * quantidade;
-                    }
-                }
-                else if (tipo === 'servico') {
-                    const servico = yield Servico_1.default.findByPk(itemId);
-                    if (servico) {
-                        yield ItemCompra_1.default.create({
-                            compraId,
-                            tipo,
-                            itemId,
-                            quantidade,
-                            precoUnitario: servico.preco,
-                            subtotal: servico.preco * quantidade,
-                        }, { transaction });
-                        valorTotal += servico.preco * quantidade;
-                    }
-                }
-            }
-            return valorTotal;
-        });
-    }
     // Criar uma nova compra
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const transaction = yield _connections_1.default.transaction();
             try {
                 const { clienteId, itensCompra } = req.body;
-                if (!clienteId || !itensCompra || itensCompra.length === 0) {
+                if (!clienteId || !itensCompra || !Array.isArray(itensCompra) || itensCompra.length === 0) {
                     res.status(400).json({ error: 'Cliente e itens da compra são obrigatórios.' });
                     return;
                 }
-                // Criar a compra
+                // Create Compra
                 const compra = yield Compra_1.default.create({ clienteId, dataEvento: new Date(), totalGeral: 0 }, { transaction });
-                // Adicionar itens da compra e calcular valor total
-                const valorTotal = yield this.addItensCompra(itensCompra, compra.id, transaction);
-                // Atualizar valor total da compra
+                let valorTotal = 0;
+                for (const item of itensCompra) {
+                    try {
+                        const { tipo, itemId, quantidade } = item;
+                        if (!tipo || !itemId || !quantidade) {
+                            console.warn(`Invalid item format:`, item);
+                            continue;
+                        }
+                        const produtoOrServico = tipo === 'produto'
+                            ? yield Produto_1.default.findByPk(itemId)
+                            : yield Servico_1.default.findByPk(itemId);
+                        if (!produtoOrServico) {
+                            console.warn(`${tipo} not found: ID ${itemId}`);
+                            continue;
+                        }
+                        const preco = produtoOrServico.preco;
+                        const subtotal = preco * quantidade;
+                        console.log(`Creating ItemCompra:`, {
+                            compraId: compra.id,
+                            tipo,
+                            itemId,
+                            quantidade,
+                            precoUnitario: preco,
+                            subtotal,
+                        });
+                        yield ItemCompra_1.default.create({
+                            compraId: compra.id,
+                            tipo,
+                            itemId,
+                            quantidade,
+                            precoUnitario: preco,
+                            subtotal,
+                        }, { transaction });
+                        valorTotal += subtotal;
+                    }
+                    catch (itemError) {
+                        console.error(`Error processing item:`, item, itemError);
+                        throw itemError;
+                    }
+                }
+                // Update Compra total
                 compra.totalGeral = valorTotal;
                 yield compra.save({ transaction });
                 yield transaction.commit();
@@ -103,7 +105,7 @@ class CompraController {
                 // Deletar os itens atuais da compra
                 yield ItemCompra_1.default.destroy({ where: { compraId: compra.id }, transaction });
                 // Adicionar novos itens e calcular valor total
-                const valorTotal = yield this.addItensCompra(itensCompra, compra.id, transaction);
+                const valorTotal = yield (0, funca_1.default)(itensCompra, compra.id, transaction);
                 // Atualizar valor total da compra
                 compra.totalGeral = valorTotal;
                 yield compra.save({ transaction });

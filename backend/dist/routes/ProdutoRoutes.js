@@ -11,4 +11,6 @@ router.get('/', ProdutoController_1.default.findAll);
 router.get('/:id', ProdutoController_1.default.findOne);
 router.put('/:id', ProdutoController_1.default.update);
 router.delete('/:id', ProdutoController_1.default.delete);
+router.get("/mais-consumidos", ProdutoController_1.default.getProdutosMaisConsumidos);
+router.get("/produtos-mais-consumidos-por-genero", ProdutoController_1.default.getProdutosMaisConsumidosPorGenero);
 exports.default = router;
